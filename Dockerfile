@@ -22,6 +22,8 @@ EXPOSE 3838
 # Define environment variable
 # ENV NAME World
 
+COPY /shiny-server.conf /etc/shiny-server/shiny-server.conf
+
 # Run shiny when the container launches
 # CMD ["/usr/bin/shiny-server.sh"]
 ENTRYPOINT shiny-server.sh

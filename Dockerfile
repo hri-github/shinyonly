@@ -17,7 +17,7 @@ RUN chown -R shiny:shiny /srv/shiny-server/
 RUN chmod -R 755 /srv/shiny-server/
 
 # Make port 3838 available to the world outside this container
-# EXPOSE 3838
+EXPOSE 3838
 
 # Define environment variable
 # ENV NAME World

@@ -15,14 +15,6 @@ RUN sudo R -e "install.packages(c('shiny', 'rmarkdown'), repos='https://cran.rst
 
 #RUN chown -R shiny:shiny /srv/shiny-server/
 #RUN chmod -R 755 /srv/shiny-server/
-### Setup user for build execution and application runtime
-### https://github.com/RHsyseng/container-rhel-examples/blob/master/starter-arbitrary-uid/Dockerfile.centos7
-ENV APP_ROOT=/opt/app-root
-ENV PATH=${APP_ROOT}/bin:${PATH} HOME=${APP_ROOT}
-COPY bin/ ${APP_ROOT}/bin/
-RUN chmod -R u+x ${APP_ROOT}/bin && \
-    chgrp -R 0 ${APP_ROOT} && \
-    chmod -R g=u ${APP_ROOT} /etc/passwd
     
 # Make port 3838 available to the world outside this container
 EXPOSE 3838
